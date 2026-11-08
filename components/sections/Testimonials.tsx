@@ -27,7 +27,7 @@ export function Testimonials() {
             <GlowCard tilt={false} className="h-full p-6 sm:p-7">
               <figure className="flex h-full flex-col">
               <Icon name="quote" size={28} className="text-lime/70" />
-              <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-fg/90">{item.quote}</blockquote>
+              <blockquote className="mt-4 flex-1 text-base leading-relaxed text-fg/90">{item.quote}</blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
                 <span
                   aria-hidden="true"

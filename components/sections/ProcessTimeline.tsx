@@ -32,7 +32,7 @@ function Step({ step, index }: { step: ProcessStep; index: number }) {
         className="glass rounded-2xl p-5 sm:p-6"
       >
         <h3 className="text-xl font-semibold tracking-tight">{step.title}</h3>
-        <p className="mt-2 text-[15px] leading-relaxed text-muted">{step.description}</p>
+        <p className="mt-2 text-base leading-relaxed text-muted">{step.description}</p>
         <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${step.title} deliverables`}>
           {step.deliverables.map((item) => (
             <li key={item}>

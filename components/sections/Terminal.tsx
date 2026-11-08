@@ -66,7 +66,7 @@ export function Terminal() {
           <span className="size-3 rounded-full bg-amber-300/80" />
           <span className="size-3 rounded-full bg-green-400/80" />
         </div>
-        <span className="truncate px-3 font-mono text-[11px] text-subtle">{terminal.title}</span>
+        <span className="truncate px-3 font-mono text-xs text-subtle">{terminal.title}</span>
         <button
           type="button"
           onClick={replay}
@@ -77,7 +77,7 @@ export function Terminal() {
         </button>
       </div>
 
-      <div role="img" aria-label={ariaLabel} className="px-4 py-5 font-mono text-[12.5px] leading-7 sm:px-5 sm:text-sm">
+      <div role="img" aria-label={ariaLabel} className="px-4 py-5 font-mono text-[13.5px] leading-7 sm:px-5 sm:text-sm">
         <p className="break-all text-fg">
           <span className="mr-2 text-lime select-none">$</span>
           {terminal.command.slice(0, shownChars)}
@@ -94,11 +94,11 @@ export function Terminal() {
             <li
               key={step}
               className={cn(
-                "flex items-center gap-2.5 text-muted transition-all duration-500",
+                "flex items-start gap-2.5 text-muted transition-all duration-500",
                 shownStage > index ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0",
               )}
             >
-              <Icon name="check" size={14} strokeWidth={2.5} className="shrink-0 text-lime" />
+              <Icon name="check" size={14} strokeWidth={2.5} className="mt-[0.45em] shrink-0 text-lime" />
               <span>{step}</span>
             </li>
           ))}

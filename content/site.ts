@@ -80,7 +80,7 @@ export const site = {
   name: "AvoSync",
   tagline: "Custom apps and websites that stand out",
   description:
-    "AvoSync is a freelance design and engineering studio building custom websites and apps for people and businesses who want something made to their needs, not off-the-shelf templates.",
+    "AvoSync is a freelance design and engineering studio building custom websites, apps, and AI-powered automation for people and businesses who want something made to their needs, not off-the-shelf templates.",
   /** PLACEHOLDER: replace with your real contact email. */
   email: "hello@avosync.example",
   legalName: "AvoSync",
@@ -103,6 +103,7 @@ export const socials: SocialLink[] = [
 
 export const navLinks: NavLink[] = [
   { label: "Services", href: "/#services" },
+  { label: "Automation", href: "/#automation" },
   { label: "Stack", href: "/#stack" },
   { label: "Work", href: "/#work" },
   { label: "Process", href: "/#process" },
@@ -193,6 +194,60 @@ export const services: Service[] = [
   },
 ];
 
+/* ── Automation & AI agents ─────────────────────────────────── */
+
+export const automationSection = {
+  id: "automation",
+  eyebrow: "Automation & AI",
+  title: "Custom automation and AI agents",
+  intro:
+    "Stop doing the repetitive stuff by hand. We design and build workflows and AI agents that handle it for you, wired into the tools you already use.",
+  /** Label used in the contact form's project-type dropdown. */
+  projectType: "Automation & AI Agents",
+  cta: { label: "Automate something", href: "/#contact" },
+  useCasesTitle: "Popular things to automate",
+  flowTitle: "Example workflow",
+  flowNote: "Illustrative example, not a client project.",
+} as const;
+
+export const automationServices: Array<{ title: string; icon: IconName; description: string; includes: string[] }> = [
+  {
+    title: "Workflow automation",
+    icon: "workflow",
+    description: "Connect your tools and remove the copy-paste.",
+    includes: ["Triggers, rules and scheduled jobs", "Integrations across your apps and APIs", "Error handling and alerts"],
+  },
+  {
+    title: "AI agents",
+    icon: "bot",
+    description: "Agents that read, decide and act, with a human in the loop where it matters.",
+    includes: ["Task-focused agents with the tools they need", "Guardrails and approval steps", "Tested on your real examples"],
+  },
+  {
+    title: "Custom integrations",
+    icon: "plug",
+    description: "Bots, dashboards and internal tools that fit how your team works.",
+    includes: ["Chat and email assistants", "Admin dashboards and reports", "Clean handover and documentation"],
+  },
+];
+
+export const automationUseCases: string[] = [
+  "Lead intake and follow-up",
+  "Support triage and replies",
+  "Invoicing and reporting",
+  "Document processing",
+  "Data syncing between tools",
+  "Internal Q&A assistants",
+];
+
+export const automationFlow: Array<{ kind: string; icon: IconName; title: string; detail: string }> = [
+  { kind: "Trigger", icon: "zap", title: "A new enquiry arrives", detail: "Form, email or webhook" },
+  { kind: "Agent", icon: "bot", title: "The agent reads and classifies it", detail: "Understands intent, pulls out the details" },
+  { kind: "Tools", icon: "plug", title: "It checks your systems", detail: "CRM, calendar, docs, inventory" },
+  { kind: "Review", icon: "shield", title: "A human approves the important bits", detail: "Guardrails, not guesswork" },
+  { kind: "Action", icon: "send", title: "It replies, updates and notifies", detail: "Email sent, record saved, team pinged" },
+];
+
 /* ── Expertise / tech stack ─────────────────────────────────── */
 
 export const expertiseSection: SectionIntro = {
@@ -218,15 +273,17 @@ export const techMarquee: string[] = [
   "PostgreSQL",
   "Stripe",
   "Vercel",
+  "LLM APIs",
+  "Webhooks",
 ];
 
 export const techGroups: Array<{ group: string; icon: IconName; items: string[] }> = [
   { group: "Frontend", icon: "code", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-  { group: "Backend", icon: "cpu", items: ["Node.js", "PostgreSQL", "REST APIs", "Serverless"] },
+  { group: "Backend", icon: "cpu", items: ["Node.js", "PostgreSQL", "REST APIs", "Serverless", "Vercel"] },
   { group: "Mobile", icon: "smartphone", items: ["React Native", "Flutter", "Expo"] },
   { group: "Commerce", icon: "cart", items: ["Shopify", "WooCommerce", "Stripe"] },
   { group: "Design", icon: "palette", items: ["Figma", "Design systems", "Prototyping"] },
-  { group: "Ship", icon: "rocket", items: ["Git", "Vercel", "CI checks"] },
+  { group: "Automation & AI", icon: "bot", items: ["LLM APIs", "Tool calling", "Webhooks", "n8n / Make / Zapier"] },
 ];
 
 export const whyUs: Array<{ icon: IconName; title: string; description: string }> = [
@@ -450,7 +507,7 @@ export const faqs: FaqItem[] = [
   {
     question: "What technologies do you use?",
     answer:
-      "We choose by fit. Websites and web apps are usually React and Next.js with TypeScript. Mobile apps use React Native or Flutter. Stores run on Shopify or WooCommerce. If you already have a stack, we'll work with it.",
+      "We choose by fit. Websites and web apps are usually React and Next.js with TypeScript. Mobile apps use React Native or Flutter. Stores run on Shopify or WooCommerce. Automations and AI agents combine LLM APIs with your existing tools, using no-code platforms where they fit and custom code where they don't. If you already have a stack, we'll work with it.",
   },
   {
     question: "Do you offer support after launch?",
@@ -504,7 +561,11 @@ export const contactSection = {
 } as const;
 
 /** The form's project-type dropdown mirrors the services above. */
-export const projectTypes: string[] = [...services.map((service) => service.title), "Something else"];
+export const projectTypes: string[] = [
+  ...services.map((service) => service.title),
+  automationSection.projectType,
+  "Something else",
+];
 
 /** PLACEHOLDER: adjust the budget bands (and currency) to suit you. */
 export const budgetRanges: string[] = ["Not sure yet", "Under $1,000", "$1,000 – $3,000", "$3,000 – $10,000", "$10,000+"];
@@ -512,7 +573,7 @@ export const budgetRanges: string[] = ["Not sure yet", "Under $1,000", "$1,000 �
 /* ── Footer ─────────────────────────────────────────────────── */
 
 export const footer = {
-  blurb: "A freelance studio building custom websites and apps that look sharp, run fast and last.",
+  blurb: "A freelance studio building custom websites, apps and automation that look sharp, run fast and last.",
   navTitle: "Explore",
   connectTitle: "Connect",
   signoff: "Built with care. Deployed with confidence.",

@@ -4,7 +4,7 @@ import { MotionProvider } from "@/components/motion/MotionProvider";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { services, site, socials } from "@/content/site";
+import { automationServices, services, site, socials } from "@/content/site";
 import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
@@ -19,6 +19,9 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
+/** If the app hasn't started after this long, scroll-reveal content is shown anyway. */
+const REVEAL_FAILSAFE_MS = 4000;
 
 const title = `${site.name} | ${site.tagline}`;
 
@@ -35,6 +38,9 @@ export const metadata: Metadata = {
     "UX design",
     "landing page design",
     "e-commerce website design",
+    "AI automation",
+    "AI agents",
+    "workflow automation",
     "Next.js developer",
   ],
   openGraph: {
@@ -64,7 +70,7 @@ const organizationJsonLd = {
   email: site.email,
   image: `${SITE_URL}/opengraph-image`,
   ...(profileLinks.length > 0 ? { sameAs: profileLinks } : {}),
-  makesOffer: services.map((service) => ({
+  makesOffer: [...services, ...automationServices].map((service) => ({
     "@type": "Offer",
     itemOffered: { "@type": "Service", name: service.title, description: service.description },
   })),
@@ -72,7 +78,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${jetBrainsMono.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${jetBrainsMono.variable}`} suppressHydrationWarning>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main"
@@ -80,6 +86,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <script
+          // Reveal failsafe: see .reveal-failsafe in globals.css and MotionProvider.
+          dangerouslySetInnerHTML={{
+            __html: `window.__revealFailsafe=setTimeout(function(){document.documentElement.classList.add("reveal-failsafe")},${REVEAL_FAILSAFE_MS})`,
+          }}
+        />
         <JsonLd data={organizationJsonLd} />
         <MotionProvider>
           <Navbar />

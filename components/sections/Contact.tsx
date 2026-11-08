@@ -46,7 +46,7 @@ export function Contact() {
                   <li key={item} className="flex items-start gap-3 text-sm text-muted">
                     <span
                       aria-hidden="true"
-                      className="inline-flex size-6 shrink-0 items-center justify-center rounded-full border border-line-strong font-mono text-[11px] text-lime"
+                      className="inline-flex size-6 shrink-0 items-center justify-center rounded-full border border-line-strong font-mono text-xs text-lime"
                     >
                       {index + 1}
                     </span>

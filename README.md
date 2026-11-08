@@ -52,7 +52,7 @@ marked `PLACEHOLDER` or `DRAFT` there is stand-in content to replace.
 - **Add a project**: add an entry to `projects`. Give it a real `image: { src, alt }` (drop the file
   in `public/work/`) to replace the generated artwork, and fill in `caseStudy`.
   Then remove `robots: { index: false }` in `app/work/[slug]/page.tsx` and add the URL to `app/sitemap.ts`.
-- **Services** also feed the contact form's "Project type" dropdown automatically.
+- **Services** and the **Automation & AI** section (`automationSection`, `automationServices`, `automationFlow`) also feed the contact form's "Project type" dropdown and the structured data automatically.
 - **Icons** are referenced by name; the available set is the map in `components/ui/Icon.tsx`.
 
 ## Design tokens

@@ -36,7 +36,7 @@ export function Engagement() {
                 <Icon name={option.icon} size={24} />
               </span>
               <h3 className="mt-6 text-2xl font-semibold tracking-tight">{option.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-muted">{option.description}</p>
+              <p className="mt-2 text-base leading-relaxed text-muted">{option.description}</p>
               <ul className="mt-6 flex-1 space-y-3 border-t border-line pt-6">
                 {option.includes.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-fg/90">

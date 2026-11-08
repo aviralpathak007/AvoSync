@@ -1,3 +1,4 @@
+import { Automation } from "@/components/sections/Automation";
 import { Contact } from "@/components/sections/Contact";
 import { Engagement } from "@/components/sections/Engagement";
 import { Expertise } from "@/components/sections/Expertise";
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Services />
+      <Automation />
       <Expertise />
       <Work />
       <Process />

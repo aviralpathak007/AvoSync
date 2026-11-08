@@ -47,7 +47,7 @@ export function Work() {
                   {project.category}
                 </Badge>
                 <h3 className="mt-4 text-lg font-semibold tracking-tight">{project.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-muted">{project.summary}</p>
+                <p className="mt-2 text-base leading-relaxed text-muted">{project.summary}</p>
                 <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
                   {project.tech.map((tech) => (
                     <li key={tech}>

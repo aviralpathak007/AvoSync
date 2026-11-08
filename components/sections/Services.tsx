@@ -29,7 +29,7 @@ export function Services() {
                 </span>
               </div>
               <h3 className="mt-6 text-xl font-semibold tracking-tight">{service.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-muted">{service.description}</p>
+              <p className="mt-2 text-base leading-relaxed text-muted">{service.description}</p>
               <ul className="mt-6 space-y-2.5 border-t border-line pt-5">
                 {service.includes.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-fg/90">

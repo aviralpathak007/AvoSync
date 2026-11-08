@@ -34,7 +34,7 @@ export function Hero() {
 
             <h1
               id="hero-title"
-              className="hero-slide mt-6 text-[2.6rem] leading-[1.03] font-bold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem] xl:text-[4.5rem]"
+              className="hero-slide mt-6 text-[2.75rem] leading-[1.03] font-bold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem] xl:text-[4.5rem]"
             >
               {hero.headlineStart} <span className="text-gradient-animated">{hero.headlineAccent}</span>
             </h1>
@@ -60,14 +60,14 @@ export function Hero() {
             <Terminal />
             <div
               aria-hidden="true"
-              className="glass animate-float absolute -top-5 -right-3 hidden items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[11px] text-lime sm:inline-flex lg:-right-6"
+              className="glass animate-float absolute -top-5 -right-3 hidden items-center gap-2 rounded-full px-3 py-1.5 font-mono text-xs text-lime sm:inline-flex lg:-right-6"
             >
               <span className="size-1.5 rounded-full bg-lime" />
               {terminal.chips[0]}
             </div>
             <div
               aria-hidden="true"
-              className="glass animate-float-slow absolute -bottom-5 -left-3 hidden items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[11px] text-cyan sm:inline-flex lg:-left-6"
+              className="glass animate-float-slow absolute -bottom-5 -left-3 hidden items-center gap-2 rounded-full px-3 py-1.5 font-mono text-xs text-cyan sm:inline-flex lg:-left-6"
             >
               <span className="size-1.5 rounded-full bg-cyan" />
               {terminal.chips[1]}
@@ -80,13 +80,13 @@ export function Hero() {
           className="hero-in mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:mt-20 md:grid-cols-4"
         >
           {hero.trust.map((item) => (
-            <li key={item.label} className="flex items-start gap-3 bg-bg/80 p-4 backdrop-blur sm:p-5">
-              <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-lime">
+            <li key={item.label} className="flex flex-col items-start gap-3 bg-bg/80 p-4 backdrop-blur sm:flex-row sm:p-5">
+              <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-lime">
                 <Icon name={item.icon} size={18} />
               </span>
               <span>
                 <span className="block text-sm font-semibold text-fg">{item.label}</span>
-                <span className="mt-0.5 block text-xs text-subtle sm:text-[13px]">{item.detail}</span>
+                <span className="mt-0.5 block text-xs text-subtle sm:text-sm">{item.detail}</span>
               </span>
             </li>
           ))}

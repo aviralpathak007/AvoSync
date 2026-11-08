@@ -49,7 +49,7 @@ export function Expertise() {
               <Icon name={point.icon} size={22} />
             </span>
             <h3 className="mt-5 text-lg font-semibold tracking-tight">{point.title}</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-muted">{point.description}</p>
+            <p className="mt-2 text-base leading-relaxed text-muted">{point.description}</p>
           </Reveal>
         ))}
       </ul>
